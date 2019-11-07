@@ -1,19 +1,20 @@
 /*滿版背景圖的製作方法*/
 /* ref http://www.astralweb.com.tw/full-screen-backround-image/ */
-html {  
+html {
     height: 100%;
 }
 
 body {
-    background-image: url('../img/bg-default.jpg');
+    background-image: url('../images/bg-default.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     /*解決下方空白與margin 8px*/
-    box-sizing: border-box; 
-    height: 100%;
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    height: 100%;
 }
 
 
@@ -22,7 +23,6 @@ body {
     box-sizing: border-box;
     background: rgba(0, 0, 0, .5);
     background-size: cover;
-    
     width: 100%;
     min-height: 100%;
     /*置中對齊*/
@@ -53,6 +53,9 @@ body {
     padding: 0;
     width: 300px;
     margin: 10px;
+    /*加入transition效果*/
+    -webkit-transition: box-shadow ease-out 1s, filter ease-out 1s;
+    transition: box-shadow ease-out 1s, filter ease-out 1s;
 }
 
 .live_cell img {
@@ -63,6 +66,12 @@ body {
     display: block;
 }
 
+.live_cell:hover {
+    box-shadow: 10px 10px 10px black;
+    filter: brightness(1.3);
+    cursor: pointer;
+}
+
 .player_part {
     box-sizing: border-box;
     width: inherit;
@@ -71,7 +80,6 @@ body {
     height: 60px;
     padding: 0;
     background:rgba(0, 0, 0, .5);
-    
 }
 
 .player_logo {
@@ -106,7 +114,7 @@ body {
     margin-left: 10px;
     color: white;
     padding-top: 7px;
-    /*讓文字超出範圍時顯示 ....*/
+    /*讓文字超出範圍顯示 ...*/
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
